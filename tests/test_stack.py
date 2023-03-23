@@ -17,3 +17,6 @@ class TestStack(unittest.TestCase):
         item.push("data")
         item.pop()
         self.assertEqual(item.top, None)
+
+    def test__str__(self):
+        pass
