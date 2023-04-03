@@ -28,6 +28,21 @@ class TestLinkedlist(unittest.TestCase):
         self.assertEqual(ll.head.data, {"id": 1})
         self.assertEqual(ll.end.data, {"id": 2})
 
+    def test_to_list(self):
+        ll = LinkedList()
+        ll.insert_beginning({"id" : 1})
+        ll.insert_at_end({"id" : 2})
+        data = ll.to_list()
+        self.assertEqual(data, [{"id" : 1}, {"id" : 2}])
+
+
+    def test_get_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_beginning({"id": 1})
+        ll.insert_at_end({"id": 2})
+        result = ll.get_data_by_id(1)
+        self.assertEqual(result, {"id": 1})
+
 
 class TestNode(unittest.TestCase):
     def test_init(self):
